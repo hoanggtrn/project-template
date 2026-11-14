@@ -1,0 +1,28 @@
+name: Build Firmware
+
+on:
+  push:
+    tags: ['*-fw-v*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v5.5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          cd fw
+          TARGET=$(grep -oP 'CONFIG_IDF_TARGET="\K[^"]+' sdkconfig.defaults || echo "esp32")
+          idf.py set-target $TARGET
+          idf.py build
+
+      - name: Upload release artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            fw/build/*.bin
+            fw/build/bootloader/bootloader.bin
+            fw/build/partition_table/partition-table.bin
+            fw/build/flash_args

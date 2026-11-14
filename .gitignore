@@ -1,0 +1,22 @@
+# ESP-IDF build
+fw/build/
+fw/sdkconfig
+fw/sdkconfig.old
+fw/managed_components/
+fw/dependencies.lock
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# EasyEDA backups
+hw/**/*.bak

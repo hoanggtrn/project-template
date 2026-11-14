@@ -36,7 +36,7 @@ Examples:
 
 1. Make changes in EasyEDA & KiCad
 2. Export to `hw/rev-a/` (overwrite existing files, git tracks history)
-3. Use naming: `PRODUCT_CODE-TYPE-YYYYMMDD-HHMM.ext` (e.g. `VSM-HEL-03A-SCH-20261115-1430.pdf`)
+3. Use naming: `PRODUCT_CODE-TYPE-YYYYMMDD-HHMM.ext` (e.g. `PRJ-NOD-01A-SCH-20261115-1430.pdf`)
 4. Commit: `git commit -m "hw: added pull-up on SDA line"`
 5. When sending to fab: `git tag <project>-hw-r1 -m "First fabrication"`
 
